@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="DEBUG">
+	<appenders>
+		<Console name="Console-err" target="SYSTEM_ERR">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<Console name="Console-out" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</appenders>
+	<loggers>
+		<logger name="sncf.oui.demo" level="DEBUG" additivity="false">
+			<appender-ref ref="Console-err" />
+		</logger>
+		<logger name="org.hibernate.SQL" level="INFO" additivity="false">
+			<appender-ref ref="Console-err"/>
+		</logger>
+		<root level="INFO">
+			<appender-ref ref="Console-out" />
+		</root>
+	</loggers>
+</configuration>
